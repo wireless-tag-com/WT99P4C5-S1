@@ -1,0 +1,131 @@
+Command: /home/abing/.espressif/python_env/idf5.5_py3.9_env/bin/python /home/abing/Desktop/qm-wt99p4/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32p4 --revision 1 --decode-panic backtrace /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/video_lcd_display/build/video_lcd_display.elf /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/video_lcd_display/build/bootloader/bootloader.elf -m '/home/abing/.espressif/python_env/idf5.5_py3.9_env/bin/python' '/home/abing/Desktop/qm-wt99p4/esp-idf/tools/idf.py'
+ode      : 0x01 (X16 Mode)
+[0;32mI (230) hex_psram: Readlatency  : 0x04 (14 cycles@Fixed)[0m
+[0;32mI (235) hex_p�ESP-ROM:esp32p4-eco2-20240710[0m
+Build:Jul 10 2024
+rst:0x1 (POWERON),boot:0xf (SPI_FAST_FLASH_BOOT)
+SPI mode:DIO, clock div:1
+load:0x4ff33ce0,len:0x1680
+load:0x4ff29ed0,len:0xd84
+load:0x4ff2cbd0,len:0x339c
+entry 0x4ff29eda
+[0;32mI (25) boot: ESP-IDF v5.5-dev-2375-g1f46216a72-dirty 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Mar 18 2025 10:21:40[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.0[0m
+[0;32mI (31) boot: efuse block revision: v0.1[0m
+[0;32mI (34) boot.esp32p4: SPI Speed      : 80MHz[0m
+[0;32mI (38) boot.esp32p4: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32p4: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=40050020 size=18534h ( 99636) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0002855c vaddr=30100000 size=00068h (   104) load[0m
+[0;32mI (109) esp_image: segment 2: paddr=000285cc vaddr=4ff00000 size=07a4ch ( 31308) load[0m
+[0;32mI (118) esp_image: segment 3: paddr=00030020 vaddr=40000020 size=484a0h (296096) map[0m
+[0;32mI (169) esp_image: segment 4: paddr=000784c8 vaddr=4ff07a4c size=0b49ch ( 46236) load[0m
+[0;32mI (180) esp_image: segment 5: paddr=0008396c vaddr=4ff12f00 size=02a3ch ( 10812) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (188) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) hex_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (198) hex_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (198) hex_psram: DriveStr.    : 0x00 (25 Ohm)[0m
+[0;32mI (199) hex_psram: dev id       : 0x03 (generation 4)[0m
+[0;32mI (204) hex_psram: density      : 0x07 (256 Mbit)[0m
+[0;32mI (208) hex_psram: good-die     : 0x06 (Pass)[0m
+[0;32mI (212) hex_psram: SRF          : 0x02 (Slow Refresh)[0m
+[0;32mI (217) hex_psram: BurstType    : 0x00 ( Wrap)[0m
+[0;32mI (221) hex_psram: BurstLen     : 0x03 (2048 Byte)[0m
+[0;32mI (226) hex_psram: BitMode      : 0x01 (X16 Mode)[0m
+[0;32mI (230) hex_psram: Readlatency  : 0x04 (14 cycles@Fixed)[0m
+[0;32mI (235) hex_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (239) MSPI DQS: tuning success, best phase id is 2[0m
+[0;32mI (422) MSPI DQS: tuning success, best delayline id is 11[0m
+[0;32mI (422) esp_psram: Found 32MB PSRAM device[0m
+[0;32mI (422) esp_psram: Speed: 200MHz[0m
+[0;32mI (423) hex_psram: psram CS IO is dedicated[0m
+[0;32mI (426) cpu_start: Multicore app[0m
+[0;32mI (1379) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1389) cpu_start: Pro cpu start user code[0m
+[0;32mI (1389) cpu_start: cpu freq: 360000000 Hz[0m
+[0;32mI (1389) app_init: Application information:[0m
+[0;32mI (1389) app_init: Project name:     video_lcd_display[0m
+[0;32mI (1394) app_init: App version:      v5.5-dev-2375-g1f46216a72-dirty[0m
+[0;32mI (1400) app_init: Compile time:     Mar 18 2025 10:21:31[0m
+[0;32mI (1405) app_init: ELF file SHA256:  85e3e5da6...[0m
+[0;32mI (1410) app_init: ESP-IDF:          v5.5-dev-2375-g1f46216a72-dirty[0m
+[0;32mI (1416) efuse_init: Min chip rev:     v0.1[0m
+[0;32mI (1420) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (1424) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (1428) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1434) heap_init: At 4FF17320 len 00023CA0 (143 KiB): RAM[0m
+[0;32mI (1439) heap_init: At 4FF3AFC0 len 00004BF0 (18 KiB): RAM[0m
+[0;32mI (1445) heap_init: At 4FF40000 len 00060000 (384 KiB): RAM[0m
+[0;32mI (1450) heap_init: At 50108080 len 00007F80 (31 KiB): RTCRAM[0m
+[0;32mI (1455) heap_init: At 30100068 len 00001F98 (7 KiB): TCM[0m
+[0;32mI (1461) esp_psram: Adding pool of 32768K of PSRAM memory to heap allocator[0m
+[0;32mI (1468) spi_flash: detected chip: generic[0m
+[0;32mI (1471) spi_flash: flash io: dio[0m
+[0;33mW (1474) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (1487) main_task: Started on CPU0[0m
+[0;32mI (1511) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1512) main_task: Calling app_main()[0m
+[0;32mI (1512) gpio: GPIO[20]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1520) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1528) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1538) app_lcd: Install panel IO[0m
+[0;32mI (1540) app_lcd: Install LCD driver of ek79007[0m
+[0;32mI (1544) ek79007: version: 1.0.2[0m
+[0;32mI (1547) gpio: GPIO[0]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1737) ov5647: Detected Camera sensor PID=0x5647[0m
+[0;32mI (1804) app_video: version: 0.8.0[0m
+[0;32mI (1804) app_video: driver:  MIPI-CSI[0m
+[0;32mI (1804) app_video: card:    MIPI-CSI[0m
+[0;32mI (1804) app_video: bus:     esp32p4:MIPI-CSI[0m
+[0;32mI (1807) app_video: width=800 height=640[0m
+[0;32mI (1812) app_main: Using user defined buffer[0m
+[0;32mI (1844) app_video: Video Stream Start[0m
+[0;32mI (1849) main_task: Returned from app_main()[0m
+[0;32mI (3240) app_main: fps: 35.946836[0m
+[0;32mI (3240) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (4639) app_main: fps: 35.733301[0m
+[0;32mI (4639) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (6038) app_main: fps: 35.733122[0m
+[0;32mI (6038) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (7437) app_main: fps: 35.733122[0m
+[0;32mI (7438) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (8837) app_main: fps: 35.733046[0m
+[0;32mI (8837) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (10236) app_main: fps: 35.733097[0m
+[0;32mI (10236) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (11635) app_main: fps: 35.732994[0m
+[0;32mI (11635) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (13035) app_main: fps: 35.732816[0m
+[0;32mI (13035) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (14434) app_main: fps: 35.733148[0m
+[0;32mI (14434) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (15833) app_main: fps: 35.732969[0m
+[0;32mI (15833) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (17232) app_main: fps: 35.732994[0m
+[0;32mI (17232) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (18632) app_main: fps: 35.732714[0m
+[0;32mI (18632) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (20031) app_main: fps: 35.733071[0m
+[0;32mI (20031) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (21430) app_main: fps: 35.732841[0m
+[0;32mI (21430) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (22829) app_main: fps: 35.732892[0m
+[0;32mI (22830) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (24229) app_main: fps: 35.732816[0m
+[0;32mI (24229) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (25628) app_main: fps: 35.732867[0m
+[0;32mI (25628) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (27027) app_main: fps: 35.732816[0m
+[0;32mI (27027) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m
+[0;32mI (28427) app_main: fps: 35.732611[0m
+[0;32mI (28427) app_main: camera_buf_hes: 800, camera_buf_ves: 640, camera_buf_len: 1000 KB[0m

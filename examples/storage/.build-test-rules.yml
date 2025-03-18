@@ -1,0 +1,160 @@
+# Documentation: .gitlab/ci/README.md#manifest-file-to-control-the-buildtest-apps
+
+examples/storage/custom_flash_driver:
+  depends_components:
+    - spi_flash
+    - driver
+
+examples/storage/emmc:
+  depends_components:
+    - fatfs
+    - vfs
+    - sdmmc
+    - esp_driver_sdmmc
+    - esp_driver_sdspi
+  enable:
+    - if: IDF_TARGET == "esp32s3"
+      reason: only support on esp32s3
+
+examples/storage/nvs_bootloader:
+  depends_components:
+    - nvs_flash
+    - nvs_sec_provider
+  disable:
+    - if: CONFIG_NAME == "nvs_enc_flash_enc" and (SOC_AES_SUPPORTED != 1 and ESP_ROM_HAS_MBEDTLS_CRYPTO_LIB != 1)
+    - if: CONFIG_NAME == "nvs_enc_hmac" and (SOC_HMAC_SUPPORTED != 1 or (SOC_HMAC_SUPPORTED == 1 and (SOC_AES_SUPPORTED != 1 and ESP_ROM_HAS_MBEDTLS_CRYPTO_LIB != 1)))
+      reason: As of now in such cases, we do not have any way to perform AES operations in the bootloader build
+
+examples/storage/nvs_rw_blob:
+  depends_components:
+    - nvs_flash
+    - driver
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed
+
+examples/storage/nvs_rw_value:
+  depends_components:
+    - nvs_flash
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed
+
+examples/storage/nvs_rw_value_cxx:
+  depends_components:
+    - nvs_flash
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed
+
+examples/storage/nvsgen:
+  depends_components:
+    - nvs_flash
+  disable_test:
+    - if: IDF_TARGET != "esp32"
+      reason: only one target needed
+
+examples/storage/partition_api/partition_find:
+  depends_components:
+    - esp_partition
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed
+
+examples/storage/partition_api/partition_mmap:
+  depends_components:
+    - esp_partition
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed
+
+examples/storage/partition_api/partition_ops:
+  depends_components:
+    - esp_partition
+    - spi_flash
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed
+
+examples/storage/parttool:
+  depends_components:
+    - partition_table
+  disable_test:
+    - if: IDF_TARGET != "esp32"
+      reason: only one target needed
+
+examples/storage/perf_benchmark:
+  depends_components:
+    - fatfs
+    - spi_flash
+    - vfs
+    - sdmmc
+    - spiffs
+    - wear_levelling
+    - esp_partition
+    - esp_driver_sdmmc
+  disable:
+    - if: IDF_TARGET == "esp32h21"
+      temporary: true
+      reason: not supported yet # TODO: [esp32h21] IDF-11609
+  disable_test:
+    - if: IDF_TARGET == "esp32p4" and CONFIG_NAME in ["sdmmc_1line", "sdmmc_4line", "sdspi_1line"]
+      temporary: true
+      reason: lack of runners, build only # TODO: IDF-8970
+
+examples/storage/sd_card/sdmmc:
+  depends_components:
+    - vfs
+    - sdmmc
+    - esp_driver_sdmmc
+  disable:
+    - if: SOC_SDMMC_HOST_SUPPORTED != 1
+  disable_test:
+    - if: IDF_TARGET not in ["esp32"]
+      temporary: true
+      reason: lack of runners
+
+examples/storage/sd_card/sdspi:
+  depends_components:
+    - vfs
+    - sdmmc
+    - esp_driver_sdspi
+  disable:
+    - if: SOC_GPSPI_SUPPORTED != 1
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32s3", "esp32c3", "esp32c5", "esp32p4"]
+      reason: needs special runner, select few typical targets for testing
+
+examples/storage/semihost_vfs:
+  depends_components:
+    - vfs
+  disable_test:
+    - if: IDF_TARGET not in ["esp32"]
+      temporary: true
+      reason: lack of runners
+
+examples/storage/spiffs:
+  depends_components:
+    - spiffs
+    - vfs
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed
+
+examples/storage/spiffsgen:
+  depends_components:
+    - spiffs
+    - vfs
+    - mbedtls
+  disable_test:
+    - if: IDF_TARGET != "esp32"
+      reason: only one target needed
+
+examples/storage/wear_levelling:
+  depends_components:
+    - vfs
+    - wear_levelling
+    - fatfs
+  disable_test:
+    - if: IDF_TARGET not in ["esp32", "esp32c3"]
+      reason: only one target per arch needed

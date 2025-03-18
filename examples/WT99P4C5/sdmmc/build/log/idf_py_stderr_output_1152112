@@ -1,0 +1,19 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/abing/.espressif/python_env/idf5.5_py3.9_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32p4 -DCCACHE_ENABLE=0 /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc
+info: INFO: Symbol EXAMPLE_PIN_CMD defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:49
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:90
+info: INFO: Symbol EXAMPLE_PIN_CLK defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:95
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:54
+info: INFO: Symbol EXAMPLE_PIN_D0 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:59
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:100
+info: INFO: Symbol EXAMPLE_PIN_D1 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:107
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:66
+info: INFO: Symbol EXAMPLE_PIN_D2 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:112
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:71
+info: INFO: Symbol EXAMPLE_PIN_D3 defined in multiple locations (see below). Please check if this is a correct behavior or a random name match:
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:76
+    /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/main/Kconfig.projbuild:117

@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/CMakeFiles/bootloader
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/CMakeFiles/bootloader.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/CMakeFiles/bootloader-complete.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

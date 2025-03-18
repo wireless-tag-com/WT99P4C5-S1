@@ -1,0 +1,10 @@
+Command: /home/abing/.espressif/python_env/idf5.5_py3.9_env/bin/python /home/abing/Desktop/qm-wt99p4/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32p4 --revision 1 --decode-panic backtrace /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/tusb_hid.elf /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader/bootloader.elf -m '/home/abing/.espressif/python_env/idf5.5_py3.9_env/bin/python' '/home/abing/Desktop/qm-wt99p4/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4ff29ed0: esp_bootloader_get_description at /home/abing/Desktop/qm-wt99p4/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c:39 (discriminator 1)
+[0m
+[0;33m--- 0x4ff2cbd0: esp_flash_encryption_enabled at /home/abing/Desktop/qm-wt99p4/esp-idf/components/bootloader_support/src/flash_encrypt.c:89
+[0m
+[0;33m--- 0x4ff29eda: call_start_cpu0 at /home/abing/Desktop/qm-wt99p4/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+[0m
+[0m

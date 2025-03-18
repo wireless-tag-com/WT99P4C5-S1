@@ -1,0 +1,2 @@
+source /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/gdbinit/symbols
+source /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/gdbinit/connect

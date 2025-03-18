@@ -1,0 +1,27 @@
+dependencies:
+  espressif/mdns:
+    component_hash: 7fd79958fd0b9a4917ee4f50141fe29c902c02d1a1feb1d6751276049b186d6b
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.8.0
+  i2s_examples_common:
+    dependencies: []
+    source:
+      path: /home/abing/Desktop/qm-wt99p4/esp-idf/examples/peripherals/i2s/i2s_examples_common
+      type: local
+    version: '*'
+  idf:
+    source:
+      type: idf
+    version: 5.5.0
+direct_dependencies:
+- espressif/mdns
+- i2s_examples_common
+manifest_hash: 5631b550e32adea8a7626657e0a7dbdcc6b10b8bb2c33cd9cf948a0b465f838f
+target: esp32p4
+version: 2.0.0

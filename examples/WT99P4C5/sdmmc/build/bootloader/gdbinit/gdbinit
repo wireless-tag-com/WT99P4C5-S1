@@ -1,0 +1,2 @@
+source /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/build/bootloader/gdbinit/symbols
+source /home/abing/Desktop/qm-wt99p4/esp-idf/examples/storage/sd_card/sdmmc/build/bootloader/gdbinit/connect

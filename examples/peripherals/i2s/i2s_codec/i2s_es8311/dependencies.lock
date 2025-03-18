@@ -1,0 +1,28 @@
+dependencies:
+  espressif/es8311:
+    component_hash: 46b3117250344bb03f143d5e2becf81cfb111679fbd7b95cefc2d302d36cc393
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4,<6.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.0.0~1
+  i2s_examples_common:
+    dependencies: []
+    source:
+      path: /home/abing/Desktop/qm-wt99p4/esp-idf/examples/peripherals/i2s/i2s_examples_common
+      type: local
+    version: '*'
+  idf:
+    source:
+      type: idf
+    version: 5.5.0
+direct_dependencies:
+- espressif/es8311
+- i2s_examples_common
+- idf
+manifest_hash: 0ec3d57808f1234ecd5cf5cdf85561174436fbe7e1606d8be19df91c21751432
+target: esp32p4
+version: 2.0.0

@@ -1,0 +1,91 @@
+Command: /home/abing/.espressif/python_env/idf5.5_py3.9_env/bin/python /home/abing/Desktop/qm-wt99p4/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32p4 --revision 1 --decode-panic backtrace /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/tusb_hid.elf /home/abing/Desktop/qm-wt99p4/esp-idf/examples/WT99P4C5/tusb_hid/build/bootloader/bootloader.elf -m '/home/abing/.espressif/python_env/idf5.5_py3.9_env/bin/python' '/home/abing/Desktop/qm-wt99p4/esp-idf/tools/idf.py'
+ESP-ROM:esp32p4-eco2-20240710
+Build:Jul 10 2024
+rst:0x1 (POWERON),boot:0xf (SPI_FAST_FLASH_BOOT)
+SPI mode:DIO, clock div:1
+load:0x4ff33ce0,len:0x1680
+load:0x4ff29ed0,len:0xd84
+load:0x4ff2cbd0,len:0x339c
+entry 0x4ff29eda
+[0;32mI (25) boot: ESP-IDF v5.5-dev-2375-g1f46216a72-dirty 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Mar 17 2025 17:41:35[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.0[0m
+[0;32mI (31) boot: efuse block revision: v0.1[0m
+[0;32mI (34) boot.esp32p4: SPI Speed      : 80MHz[0m
+[0;32mI (38) boot.esp32p4: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32p4: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=40020020 size=0a610h ( 42512) map[0m
+[0;32mI (98) esp_image: segment 1: paddr=0001a638 vaddr=30100000 size=00044h (    68) load[0m
+[0;32mI (99) esp_image: segment 2: paddr=0001a684 vaddr=4ff00000 size=05994h ( 22932) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00020020 vaddr=40000020 size=1f2d8h (127704) map[0m
+[0;32mI (134) esp_image: segment 4: paddr=0003f300 vaddr=4ff05994 size=09240h ( 37440) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=00048548 vaddr=4ff0ec00 size=02160h (  8544) load[0m
+[0;32mI (149) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (160) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 360000000 Hz[0m
+[0;32mI (171) app_init: Application information:[0m
+[0;32mI (171) app_init: Project name:     tusb_hid[0m
+[0;32mI (175) app_init: App version:      v5.5-dev-2375-g1f46216a72-dirty[0m
+[0;32mI (181) app_init: Compile time:     Mar 17 2025 17:41:20[0m
+[0;32mI (186) app_init: ELF file SHA256:  3bceaf753...[0m
+[0;32mI (190) app_init: ESP-IDF:          v5.5-dev-2375-g1f46216a72-dirty[0m
+[0;32mI (196) efuse_init: Min chip rev:     v0.1[0m
+[0;32mI (200) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (204) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (208) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (214) heap_init: At 4FF128F0 len 000286D0 (161 KiB): RAM[0m
+[0;32mI (219) heap_init: At 4FF3AFC0 len 00004BF0 (18 KiB): RAM[0m
+[0;32mI (224) heap_init: At 4FF40000 len 00060000 (384 KiB): RAM[0m
+[0;32mI (230) heap_init: At 50108080 len 00007F80 (31 KiB): RTCRAM[0m
+[0;32mI (235) heap_init: At 30100044 len 00001FBC (7 KiB): TCM[0m
+[0;32mI (241) spi_flash: detected chip: generic[0m
+[0;32mI (244) spi_flash: flash io: dio[0m
+[0;33mW (247) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (259) main_task: Started on CPU0[0m
+[0;32mI (299) main_task: Calling app_main()[0m
+[0;32mI (299) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (299) example: USB initialization[0m
+[0;33mW (299) usb_phy: Using UTMI PHY instead of requested internal PHY[0m
+[0;33mW (309) tusb_desc: No Device descriptor provided, using default.[0m
+[0;33mW (319) tusb_desc: No Qulifier descriptor provided, using default.[0m
+[0;32mI (319) tusb_desc: [0m
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0x303a      │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x4004      │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘
+[0;32mI (489) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (489) example: USB initialization DONE[0m
+[0;33mW (649) tusb_desc: String index (238) is out of bounds, check your string descriptor[0m
+[0;32mI (21999) example: Sending Keyboard report[0m
+[0;32mI (22049) example: Sending Mouse report[0m
