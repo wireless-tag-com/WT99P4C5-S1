@@ -1,6 +1,6 @@
 build/
 .vscode/
 managed_components/
-dependencies.lock/
+dependencies.lock
 sdkconfig/
-.cursorignore/
+.cursorignore
