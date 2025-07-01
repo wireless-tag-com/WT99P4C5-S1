@@ -1,0 +1,17 @@
+## IDF Component Manager Manifest File
+dependencies:
+  ## Required IDF version
+  idf: ">=5.3"
+  espressif/esp-brookesia:
+    version: "0.4.*"
+  esp_video:
+    version: "0.8.*"
+    public: true
+  espressif/esp_wifi_remote:
+    version: "*"
+    rules:
+      - if: "target in [esp32p4, esp32h2]"
+  espressif/esp_hosted:
+    version: "*"
+    rules:
+      - if: "target in [esp32p4, esp32h2]"
