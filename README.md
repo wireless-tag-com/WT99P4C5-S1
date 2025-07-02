@@ -1,4 +1,4 @@
-# WT99P4C5-S1 Smart Multimedia Device Project
+# WT99P4C5-S1 Example Project
 
 ## Project Overview
 
