@@ -4,3 +4,4 @@ managed_components/
 dependencies.lock
 sdkconfig
 .cursorignore
+.cache/
