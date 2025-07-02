@@ -86,25 +86,10 @@
  *  @brief Display BSP API
  *  @{
  */
-#if CONFIG_BSP_LCD_TYPE_1024_600
-#define BSP_CUSTOM_BOARD 1
-#if BSP_CUSTOM_BOARD
 #define BSP_LCD_BACKLIGHT (GPIO_NUM_20)
 #define BSP_LCD_RST       (GPIO_NUM_NC)
 #define BSP_LCD_TOUCH_RST (GPIO_NUM_23)
 #define BSP_LCD_TOUCH_INT (GPIO_NUM_21)
-#else
-#define BSP_LCD_BACKLIGHT (GPIO_NUM_26)
-#define BSP_LCD_RST       (GPIO_NUM_27)
-#define BSP_LCD_TOUCH_RST (GPIO_NUM_NC)
-#define BSP_LCD_TOUCH_INT (GPIO_NUM_NC)
-#endif
-#else
-#define BSP_LCD_BACKLIGHT (GPIO_NUM_23)
-#define BSP_LCD_RST       (GPIO_NUM_NC)
-#define BSP_LCD_TOUCH_RST (GPIO_NUM_NC)
-#define BSP_LCD_TOUCH_INT (GPIO_NUM_NC)
-#endif
 /** @} */ // end of display
 
 /** @defgroup g02_storage SD Card and SPIFFS

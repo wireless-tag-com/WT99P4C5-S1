@@ -29,11 +29,8 @@
 #define ESP_LCD_COLOR_FORMAT_RGB888    (2)
 
 /* LCD display color format */
-#if CONFIG_BSP_LCD_COLOR_FORMAT_RGB888
-#define BSP_LCD_COLOR_FORMAT        (ESP_LCD_COLOR_FORMAT_RGB888)
-#else
+
 #define BSP_LCD_COLOR_FORMAT        (ESP_LCD_COLOR_FORMAT_RGB565)
-#endif
 /* LCD display color bytes endianess */
 #define BSP_LCD_BIGENDIAN           (1)
 /* LCD display color bits */
@@ -41,15 +38,9 @@
 /* LCD display color space */
 #define BSP_LCD_COLOR_SPACE         (ESP_LCD_COLOR_SPACE_RGB)
 
-#if CONFIG_BSP_LCD_TYPE_1024_600
 /* LCD display definition 1024x600 */
 #define BSP_LCD_H_RES              (1024)
 #define BSP_LCD_V_RES              (600)
-#else
-/* LCD display definition 1280x800 */
-#define BSP_LCD_H_RES              (800)
-#define BSP_LCD_V_RES              (1280)
-#endif
 
 #define BSP_LCD_MIPI_DSI_LANE_NUM          (2)    // 2 data lanes
 #define BSP_LCD_MIPI_DSI_LANE_BITRATE_MBPS (1000) // 1Gbps
@@ -93,10 +84,6 @@ typedef struct {
 typedef struct {
     esp_lcd_dsi_bus_handle_t    mipi_dsi_bus;  /*!< MIPI DSI bus handle */
     esp_lcd_panel_io_handle_t   io;            /*!< ESP LCD IO handle */
-#if CONFIG_BSP_LCD_TYPE_HDMI
-    esp_lcd_panel_io_handle_t   io_cec;        /*!< ESP LCD IO (HDMI CEC) handle */
-    esp_lcd_panel_io_handle_t   io_avi;        /*!< ESP LCD IO (HDMI AVI) handle */
-#endif
     esp_lcd_panel_handle_t      panel;         /*!< ESP LCD panel (color) handle */
     esp_lcd_panel_handle_t      control;       /*!< ESP LCD panel (control) handle */
 } bsp_lcd_handles_t;

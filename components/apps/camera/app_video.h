@@ -28,11 +28,7 @@ typedef enum {
 #define EXAMPLE_CAM_DEV_PATH                (ESP_VIDEO_MIPI_CSI_DEVICE_NAME)
 #define EXAMPLE_CAM_BUF_NUM                 (4)
 
-#if CONFIG_BSP_LCD_COLOR_FORMAT_RGB565
 #define APP_VIDEO_FMT              (APP_VIDEO_FMT_RGB565)
-#elif CONFIG_BSP_LCD_COLOR_FORMAT_RGB888
-#define APP_VIDEO_FMT              (APP_VIDEO_FMT_RGB888)
-#endif
 
 typedef void (*app_video_frame_operation_cb_t)(uint8_t *camera_buf, uint8_t camera_buf_index, uint32_t camera_buf_hes, uint32_t camera_buf_ves, size_t camera_buf_len);
 
