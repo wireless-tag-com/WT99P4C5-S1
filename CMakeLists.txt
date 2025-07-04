@@ -20,4 +20,4 @@ add_compile_options(
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-enum-enum-conversion")
-project(phone_p4_function_ev_board)
+project(wt99p4c5_s1_board)
