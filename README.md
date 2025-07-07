@@ -74,7 +74,6 @@ This is a sample project based on the WT99P4C5_S1 development board, featuring a
 
 Please install ESP-IDF v5.5 (commit: cbe9388f45dd8f33fc560c9727d429e8e107d476) or the latest version according to the official documentation:
 - [ESP-IDF Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
-- Clone `esp-hosted-mcu(commit:6a6d 37bd 912153057c41 aa85 b3ee992549 abc8f)`, select the slave project, set the target chip esp32c5, and compile the slave esp32c5 firmware
 
 #### 2. Clone Project
 

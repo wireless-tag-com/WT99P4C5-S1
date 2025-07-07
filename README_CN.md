@@ -78,7 +78,6 @@
 
 请按照官方文档安装ESP-IDF v5.5(commit:cbe9388f45dd8f33fc560c9727d429e8e107d476)或最新版本：
 - [ESP-IDF 入门指南](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/index.html)
-- 克隆`esp-hosted-mcu(commit:6a6d37bd912153057c41aa85b3eee992549abc8f)`,选择其中的slave工程，设置目标芯片esp32c5，编译从机esp32c5的固件
 
 #### 2. 克隆项目
 
