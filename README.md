@@ -63,6 +63,9 @@ This is a sample project based on the WT99P4C5_S1 development board, featuring a
 ### Hardware Requirements
 
 - **Development Board**: WT99P4C5-S1 development board
+
+![WT99P4C5-S1](./docs/WT99P4C5-S1.png#pic_center)
+
 - **Display**: MIPI DSI interface display (ek79007)
 - **Storage**: SD card (optional)
 - **Camera**: OV5647
