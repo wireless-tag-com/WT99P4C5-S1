@@ -5,3 +5,4 @@ dependencies.lock
 sdkconfig
 .cursorignore
 .cache/
+sdkconfig.old
