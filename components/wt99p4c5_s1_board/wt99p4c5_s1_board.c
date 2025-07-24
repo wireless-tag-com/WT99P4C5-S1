@@ -169,10 +169,7 @@ esp_err_t bsp_sdcard_sdmmc_mount(bsp_sdcard_cfg_t *cfg)
 {
     sdmmc_host_t sdhost = {0};
     sdmmc_slot_config_t sdslot = {0};
-    const esp_vfs_fat_sdmmc_mount_config_t mount_config = {
-        .format_if_mount_failed = false,
-        .max_files = 5,
-        .allocation_unit_size = 64 * 1024};
+    const esp_vfs_fat_sdmmc_mount_config_t mount_config = {.format_if_mount_failed = false, .max_files = 5, .allocation_unit_size = 64 * 1024};
     assert(cfg);
 
     if (!cfg->mount) {
@@ -210,10 +207,7 @@ esp_err_t bsp_sdcard_sdspi_mount(bsp_sdcard_cfg_t *cfg)
 {
     sdmmc_host_t sdhost = {0};
     sdspi_device_config_t sdslot = {0};
-    const esp_vfs_fat_sdmmc_mount_config_t mount_config = {
-        .format_if_mount_failed = false,
-        .max_files = 5,
-        .allocation_unit_size = 64 * 1024};
+    const esp_vfs_fat_sdmmc_mount_config_t mount_config = {.format_if_mount_failed = false, .max_files = 5, .allocation_unit_size = 64 * 1024};
     assert(cfg);
 
     ESP_LOGD(TAG, "Initialize SPI bus");
@@ -480,9 +474,11 @@ esp_err_t bsp_display_brightness_init(void)
 
 esp_err_t bsp_display_brightness_deinit(void)
 {
-    const ledc_timer_config_t LCD_backlight_timer = {.speed_mode = LEDC_LOW_SPEED_MODE,
-                                                     .timer_num = 1,
-                                                     .deconfigure = 1};
+    const ledc_timer_config_t LCD_backlight_timer = {
+        .speed_mode = LEDC_LOW_SPEED_MODE,
+        .timer_num = 1,
+        .deconfigure = 1,
+    };
     BSP_ERROR_CHECK_RETURN_ERR(ledc_timer_pause(LEDC_LOW_SPEED_MODE, 1));
     BSP_ERROR_CHECK_RETURN_ERR(ledc_timer_config(&LCD_backlight_timer));
     return ESP_OK;
@@ -521,15 +517,13 @@ static esp_err_t bsp_enable_dsi_phy_power(void)
         .chan_id = BSP_MIPI_DSI_PHY_PWR_LDO_CHAN,
         .voltage_mv = BSP_MIPI_DSI_PHY_PWR_LDO_VOLTAGE_MV,
     };
-    ESP_RETURN_ON_ERROR(esp_ldo_acquire_channel(&ldo_cfg, &disp_phy_pwr_chan), TAG,
-                        "Acquire LDO channel for DPHY failed");
+    ESP_RETURN_ON_ERROR(esp_ldo_acquire_channel(&ldo_cfg, &disp_phy_pwr_chan), TAG, "Acquire LDO channel for DPHY failed");
     ESP_LOGI(TAG, "MIPI DSI PHY Powered on");
 
     return ESP_OK;
 }
 
-esp_err_t bsp_display_new(const bsp_display_config_t *config, esp_lcd_panel_handle_t *ret_panel,
-                          esp_lcd_panel_io_handle_t *ret_io)
+esp_err_t bsp_display_new(const bsp_display_config_t *config, esp_lcd_panel_handle_t *ret_panel, esp_lcd_panel_io_handle_t *ret_io)
 {
     esp_err_t ret = ESP_OK;
     bsp_lcd_handles_t handles;
@@ -593,8 +587,7 @@ esp_err_t bsp_display_new_with_handles(const bsp_display_config_t *config, bsp_l
         .flags.reset_active_high = 1,
         .vendor_config = &vendor_config,
     };
-    ESP_GOTO_ON_ERROR(esp_lcd_new_panel_ek79007(io, &lcd_dev_config, &disp_panel), err, TAG,
-                      "New LCD panel EK79007 failed");
+    ESP_GOTO_ON_ERROR(esp_lcd_new_panel_ek79007(io, &lcd_dev_config, &disp_panel), err, TAG, "New LCD panel EK79007 failed");
     ESP_GOTO_ON_ERROR(esp_lcd_panel_reset(disp_panel), err, TAG, "LCD panel reset failed");
     ESP_GOTO_ON_ERROR(esp_lcd_panel_init(disp_panel), err, TAG, "LCD panel init failed");
 
@@ -697,28 +690,27 @@ static lv_display_t *bsp_display_lcd_init(const bsp_display_cfg_t *cfg)
 
     /* Add LCD screen */
     ESP_LOGD(TAG, "Add LCD screen");
-    const lvgl_port_display_cfg_t disp_cfg = {
-        .io_handle = disp_handles.io,
-        .panel_handle = disp_handles.panel,
-        .control_handle = disp_handles.control,
-        .buffer_size = cfg->buffer_size,
-        .double_buffer = cfg->double_buffer,
-        .hres = display_hres,
-        .vres = display_vres,
-        .monochrome = false,
-        /* Rotation values must be same as used in esp_lcd for initial settings of the screen */
-        .rotation =
-            {
-                .swap_xy = false,
-                .mirror_x = true,
-                .mirror_y = true,
-            },
-        .flags = {
-            .buff_dma = cfg->flags.buff_dma,
-            .buff_spiram = cfg->flags.buff_spiram,
-            .sw_rotate = false, /* Avoid tearing is not supported for SW rotation */
-            .direct_mode = true,
-        }};
+    const lvgl_port_display_cfg_t disp_cfg = {.io_handle = disp_handles.io,
+                                              .panel_handle = disp_handles.panel,
+                                              .control_handle = disp_handles.control,
+                                              .buffer_size = cfg->buffer_size,
+                                              .double_buffer = cfg->double_buffer,
+                                              .hres = display_hres,
+                                              .vres = display_vres,
+                                              .monochrome = false,
+                                              /* Rotation values must be same as used in esp_lcd for initial settings of the screen */
+                                              .rotation =
+                                                  {
+                                                      .swap_xy = false,
+                                                      .mirror_x = true,
+                                                      .mirror_y = true,
+                                                  },
+                                              .flags = {
+                                                  .buff_dma = cfg->flags.buff_dma,
+                                                  .buff_spiram = cfg->flags.buff_spiram,
+                                                  .sw_rotate = false, /* Avoid tearing is not supported for SW rotation */
+                                                  .direct_mode = true,
+                                              }};
 
     const lvgl_port_display_dsi_cfg_t dpi_cfg = {
         .flags =
@@ -875,8 +867,7 @@ static void eth_event_handler(void *arg, esp_event_base_t event_base, int32_t ev
         case ETHERNET_EVENT_CONNECTED:
             esp_eth_ioctl(eth_handle, ETH_CMD_G_MAC_ADDR, mac_addr);
             ESP_LOGI(TAG, "Ethernet Link Up");
-            ESP_LOGI(TAG, "Ethernet HW Addr %02x:%02x:%02x:%02x:%02x:%02x", mac_addr[0], mac_addr[1], mac_addr[2],
-                     mac_addr[3], mac_addr[4], mac_addr[5]);
+            ESP_LOGI(TAG, "Ethernet HW Addr %02x:%02x:%02x:%02x:%02x:%02x", mac_addr[0], mac_addr[1], mac_addr[2], mac_addr[3], mac_addr[4], mac_addr[5]);
             break;
         case ETHERNET_EVENT_DISCONNECTED:
             ESP_LOGI(TAG, "Ethernet Link Down");
@@ -927,14 +918,12 @@ esp_err_t bsp_eth_init(void)
     esp_eth_mac_t *mac = esp_eth_mac_new_esp32(&esp32_emac_config, &mac_config);
     esp_eth_phy_t *phy = esp_eth_phy_new_ip101(&phy_config);
     esp_eth_config_t config = ETH_DEFAULT_CONFIG(mac, phy);
-    ESP_GOTO_ON_FALSE(esp_eth_driver_install(&config, &eth_handle) == ESP_OK, ESP_FAIL, err, TAG,
-                      "Ethernet driver install failed");
+    ESP_GOTO_ON_FALSE(esp_eth_driver_install(&config, &eth_handle) == ESP_OK, ESP_FAIL, err, TAG, "Ethernet driver install failed");
 
     esp_netif_config_t cfg = ESP_NETIF_DEFAULT_ETH();
     eth_netif = esp_netif_new(&cfg);
     glue = esp_eth_new_netif_glue(eth_handle);
-    ESP_GOTO_ON_FALSE(esp_netif_attach(eth_netif, glue) == ESP_OK, ESP_FAIL, err, TAG,
-                      "Failed to attach Ethernet driver to netif");
+    ESP_GOTO_ON_FALSE(esp_netif_attach(eth_netif, glue) == ESP_OK, ESP_FAIL, err, TAG, "Failed to attach Ethernet driver to netif");
 
     ESP_ERROR_CHECK(esp_event_handler_register(ETH_EVENT, ESP_EVENT_ANY_ID, &eth_event_handler, NULL));
     ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_ETH_GOT_IP, &got_ip_event_handler, NULL));
