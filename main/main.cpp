@@ -33,17 +33,33 @@ extern "C" void app_main(void)
     }
     ESP_ERROR_CHECK(err);
 
-    ESP_ERROR_CHECK(bsp_spiffs_mount());
-    ESP_LOGI(TAG, "SPIFFS mount successfully");
+    esp_err_t ret_spiffs = bsp_spiffs_mount();
+    if (ret_spiffs != ESP_OK) {
+        ESP_LOGE(TAG, "SPIFFS mount failed: %s", esp_err_to_name(ret_spiffs));
+    } else {
+        ESP_LOGI(TAG, "SPIFFS mount successfully");
+    }
 
-    ESP_ERROR_CHECK(bsp_sdcard_mount());
-    ESP_LOGI(TAG, "SD card mount successfully");
+    esp_err_t ret_sdcard = bsp_sdcard_mount();
+    if (ret_sdcard != ESP_OK) {
+        ESP_LOGE(TAG, "SD card mount failed: %s", esp_err_to_name(ret_sdcard));
+    } else {
+        ESP_LOGI(TAG, "SD card mount successfully");
+    }
 
-    ESP_ERROR_CHECK(bsp_extra_codec_init());
-    ESP_LOGI(TAG, "Codec init successfully");
+    esp_err_t ret_codec = bsp_extra_codec_init();
+    if (ret_codec != ESP_OK) {
+        ESP_LOGE(TAG, "Codec init failed: %s", esp_err_to_name(ret_codec));
+    } else {
+        ESP_LOGI(TAG, "Codec init successfully");
+    }
 
-    ESP_ERROR_CHECK(bsp_eth_init());
-    ESP_LOGI(TAG, "Ethernet init successfully");
+    esp_err_t ret_eth = bsp_eth_init();
+    if (ret_eth != ESP_OK) {
+        ESP_LOGE(TAG, "Ethernet init failed: %s", esp_err_to_name(ret_eth));
+    } else {
+        ESP_LOGI(TAG, "Ethernet init successfully"); 
+    }
 
     bsp_display_cfg_t cfg = {
         .lvgl_port_cfg = LVGL_PORT_INIT_CONFIG(),
@@ -105,9 +121,11 @@ extern "C" void app_main(void)
     assert(camera != nullptr && "Failed to create camera");
     assert((phone->installApp(camera) >= 0) && "Failed to begin camera");
 
-    AppVideoPlayer *video_player = new AppVideoPlayer();
-    assert(video_player != nullptr && "Failed to create video_player");
-    assert((phone->installApp(video_player) >= 0) && "Failed to begin video_player");
+    if (ret_sdcard == ESP_OK && ret_spiffs == ESP_OK) {
+        AppVideoPlayer *video_player = new AppVideoPlayer();
+        assert(video_player != nullptr && "Failed to create video_player");
+        assert((phone->installApp(video_player) >= 0) && "Failed to begin video_player");
+    }
 
     /* Release the lock */
     bsp_display_unlock();

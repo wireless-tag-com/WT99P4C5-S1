@@ -484,8 +484,13 @@ esp_err_t AppSettings::initWifi()
     esp_event_loop_create_default();
     esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();
     assert(sta_netif);
+
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+    esp_err_t ret = esp_wifi_init(&cfg);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "WiFi init failed: %s, ESP-Hosted may not be ready", esp_err_to_name(ret));
+        return ret;
+    }
 
     esp_event_handler_instance_t instance_any_id;
     ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
@@ -529,6 +534,12 @@ void AppSettings::scanWifiAndUpdateUi(void)
     esp_wifi_start();
     esp_wifi_scan_start(NULL, true);
     ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&ap_count));
+
+    if (ap_count == 0) {
+        ESP_LOGE(TAG, "No APs found");
+        return;
+    }
+
     ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&number, ap_info));
 #if ENABLE_DEBUG_LOG
     ESP_LOGI(TAG, "Total APs scanned = %u", ap_count);
