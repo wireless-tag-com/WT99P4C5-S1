@@ -76,7 +76,7 @@
 
 #### 1. 安装ESP-IDF
 
-请按照官方文档安装ESP-IDF v5.5(commit:cbe9388f45dd8f33fc560c9727d429e8e107d476)或最新版本：
+请按照官方文档安装ESP-IDF v5.5.5(commit b774170ff46c393eeb5e495ea37936038d3f4f4f)：
 - [ESP-IDF 入门指南](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/index.html)
 
 #### 2. 克隆项目
@@ -126,6 +126,7 @@ idf.py monitor
 
 #### ESP32P4工程配置
 
+##### 1. 配置esp-hosted的slave芯片类型
 打开menuconfig进入对应的配置选项，配置esp32c5作为slave
 
 ```bash
@@ -133,6 +134,27 @@ idf.py monitor
 ```
 
 >[!NOTE] 需要注意引脚配置
+
+##### 2. 配置esp32p4芯片版本
+
+先观察开发板的模组型号，分为：N16R32、N16R32X两种
+###### 2.1 N16R32
+![N16R32](./docs/N16R32_model.png#pic_center)
+
+需要在menuconfig里面配置如下：
+```bash
+(Top) → Component config → Hardware Settings → Chip revision
+```
+![WT0132P4_A1_N16R32](./docs/WT0132P4_A1_N16R32.png#pic_center)
+
+###### 2.2 N16R32X
+![N16R32](./docs/N16R32X_model.png#pic_center)
+
+需要在menuconfig里面配置如下：
+```bash
+(Top) → Component config → Hardware Settings → Chip revision
+```
+![WT0132P4_A1_N16R32X](./docs/WT0132P4_A1_N16R32X.png#pic_center)
 
 #### 克隆esp32c5工程
 

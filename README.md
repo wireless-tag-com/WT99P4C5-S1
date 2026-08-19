@@ -75,7 +75,7 @@ This is a sample project based on the WT99P4C5_S1 development board, featuring a
 
 #### 1. Install ESP-IDF
 
-Please install ESP-IDF v5.5 (commit: cbe9388f45dd8f33fc560c9727d429e8e107d476) or the latest version according to the official documentation:
+Please install ESP-IDF v5.5.5 (commit: b774170ff46c393eeb5e495ea37936038d3f4f4f) according to the official documentation:
 - [ESP-IDF Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
 
 #### 2. Clone Project
@@ -125,13 +125,44 @@ idf.py monitor
 
 #### ESP32P4 Project Configuration
 
-Open menuconfig and enter the corresponding configuration options, configure ESP32C5 as slave
+##### 1. Configure the esp-hosted slave target
+
+Open menuconfig and enter the corresponding configuration options to set ESP32C5 as the slave target.
 
 ```bash
 (Top) → Component config → Wi-Fi Remote → choose slave target
 ```
 
->[!NOTE] Note the pin configuration
+>[!NOTE]
+>Pay attention to the pin configuration.
+
+##### 2. Configure the ESP32P4 chip revision
+
+First check the module model on the development board. There are two variants: N16R32 and N16R32X.
+
+###### 2.1 N16R32
+
+![N16R32](./docs/N16R32_model.png#pic_center)
+
+In menuconfig, configure the following option:
+
+```bash
+(Top) → Component config → Hardware Settings → Chip revision
+```
+
+![WT0132P4_A1_N16R32](./docs/WT0132P4_A1_N16R32.png#pic_center)
+
+###### 2.2 N16R32X
+
+![N16R32](./docs/N16R32X_model.png#pic_center)
+
+In menuconfig, configure the following option:
+
+```bash
+(Top) → Component config → Hardware Settings → Chip revision
+```
+
+![WT0132P4_A1_N16R32X](./docs/WT0132P4_A1_N16R32X.png#pic_center)
 
 #### Clone ESP32C5 Project
 
