@@ -48,6 +48,12 @@
 #define BSP_MIPI_DSI_PHY_PWR_LDO_CHAN       (3)  // LDO_VO3 is connected to VDD_MIPI_DPHY
 #define BSP_MIPI_DSI_PHY_PWR_LDO_VOLTAGE_MV (2500)
 
+#if CONFIG_ESP_REV_MIN_FULL >= 300
+#define BSP_MIPI_DSI_PHY_CLK_SRC_DEFAULT    MIPI_DSI_PHY_PLLREF_CLK_SRC_SPLL
+#else
+#define BSP_MIPI_DSI_PHY_CLK_SRC_DEFAULT    ((mipi_dsi_phy_clock_source_t)0)
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif

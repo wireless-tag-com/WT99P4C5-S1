@@ -2,6 +2,11 @@
 
 [中文版本](./README_CN.md)
 
+>[!IMPORTANT]
+>**Please use ESP-IDF v5.5.5**
+>
+>This project is developed and verified with ESP-IDF v5.5.5 (commit: `b774170ff46c393eeb5e495ea37936038d3f4f4f`). Do not use other versions, otherwise build or runtime issues may occur.
+
 ## Project Overview
 
 This is a sample project based on the WT99P4C5_S1 development board, featuring a smartphone-like user interface built with the ESP-Brookesia UI framework. The project integrates various application functions including audio/video playback, camera, games, calculator, and supports computer vision features such as face detection and pedestrian detection.
@@ -64,7 +69,9 @@ This is a sample project based on the WT99P4C5_S1 development board, featuring a
 
 - **Development Board**: WT99P4C5-S1 development board
 
-![WT99P4C5-S1](./docs/WT99P4C5-S1.png#pic_center)
+<div align="center">
+  <img src="./docs/WT99P4C5-S1.png" alt="WT99P4C5-S1" width="420" />
+</div>
 
 - **Display**: MIPI DSI interface display (ek79007)
 - **Storage**: SD card (optional)
@@ -142,7 +149,9 @@ First check the module model on the development board. There are two variants: N
 
 ###### 2.1 N16R32
 
-![N16R32](./docs/N16R32_model.png#pic_center)
+<div align="center">
+  <img src="./docs/N16R32_model.png" alt="N16R32" width="360" />
+</div>
 
 In menuconfig, configure the following option:
 
@@ -150,11 +159,15 @@ In menuconfig, configure the following option:
 (Top) → Component config → Hardware Settings → Chip revision
 ```
 
-![WT0132P4_A1_N16R32](./docs/WT0132P4_A1_N16R32.png#pic_center)
+<div align="center">
+  <img src="./docs/WT0132P4_A1_N16R32.png" alt="WT0132P4_A1_N16R32" width="520" />
+</div>
 
 ###### 2.2 N16R32X
 
-![N16R32](./docs/N16R32X_model.png#pic_center)
+<div align="center">
+  <img src="./docs/N16R32X_model.png" alt="N16R32X" width="360" />
+</div>
 
 In menuconfig, configure the following option:
 
@@ -162,7 +175,9 @@ In menuconfig, configure the following option:
 (Top) → Component config → Hardware Settings → Chip revision
 ```
 
-![WT0132P4_A1_N16R32X](./docs/WT0132P4_A1_N16R32X.png#pic_center)
+<div align="center">
+  <img src="./docs/WT0132P4_A1_N16R32X.png" alt="WT0132P4_A1_N16R32X" width="520" />
+</div>
 
 #### Clone ESP32C5 Project
 

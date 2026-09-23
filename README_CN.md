@@ -2,6 +2,11 @@
 
 [英文版本](./README.md)
 
+>[!IMPORTANT]
+>**请使用 ESP-IDF v5.5.5**
+>
+>本项目基于 ESP-IDF v5.5.5（commit: `b774170ff46c393eeb5e495ea37936038d3f4f4f`）开发与验证，请勿使用其他版本，否则可能导致编译失败或运行异常。
+
 ## 项目简介
 
 这是一个基于WT99P4C5_S1的示例项目，采用ESP-Brookesia UI框架展示类似智能手机的用户界面。该项目集成了多种应用程序功能，包括音视频播放、摄像头、游戏、计算器等，并支持人脸检测和行人检测等计算机视觉功能。
@@ -64,7 +69,9 @@
 
 - **开发板**: WT99P4C5-S1开发板
 
-![WT99P4C5-S1](./docs/WT99P4C5-S1.png#pic_center)
+<div align="center">
+  <img src="./docs/WT99P4C5-S1.png" alt="WT99P4C5-S1" width="420" />
+</div>
 
 - **显示屏**: MIPI DSI接口显示屏(ek79007)
 - **存储**: SD卡（可选）
@@ -139,22 +146,34 @@ idf.py monitor
 
 先观察开发板的模组型号，分为：N16R32、N16R32X两种
 ###### 2.1 N16R32
-![N16R32](./docs/N16R32_model.png#pic_center)
+
+<div align="center">
+  <img src="./docs/N16R32_model.png" alt="N16R32" width="360" />
+</div>
 
 需要在menuconfig里面配置如下：
 ```bash
 (Top) → Component config → Hardware Settings → Chip revision
 ```
-![WT0132P4_A1_N16R32](./docs/WT0132P4_A1_N16R32.png#pic_center)
+
+<div align="center">
+  <img src="./docs/WT0132P4_A1_N16R32.png" alt="WT0132P4_A1_N16R32" width="520" />
+</div>
 
 ###### 2.2 N16R32X
-![N16R32](./docs/N16R32X_model.png#pic_center)
+
+<div align="center">
+  <img src="./docs/N16R32X_model.png" alt="N16R32X" width="360" />
+</div>
 
 需要在menuconfig里面配置如下：
 ```bash
 (Top) → Component config → Hardware Settings → Chip revision
 ```
-![WT0132P4_A1_N16R32X](./docs/WT0132P4_A1_N16R32X.png#pic_center)
+
+<div align="center">
+  <img src="./docs/WT0132P4_A1_N16R32X.png" alt="WT0132P4_A1_N16R32X" width="520" />
+</div>
 
 #### 克隆esp32c5工程
 
