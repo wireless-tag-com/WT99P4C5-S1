@@ -5,6 +5,10 @@
 cmake_minimum_required(VERSION 3.5)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
+set(DEV_MODEL       "WT99P4C5-S1")
+add_definitions(-DDEV_MODEL="${DEV_MODEL}")
+set(SOFT_VERSION    "V1.0")
+add_definitions(-DSOFT_VERSION="${SOFT_VERSION}")
 set(CXX_COMPILE_OPTIONS
     -Wno-deprecated-enum-enum-conversion
     -Wno-write-strings
